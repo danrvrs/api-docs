@@ -427,6 +427,8 @@
         
             <li><a href="#error-code-48">Error Code: 48</a></li>
         
+            <li><a href="#error-code-49">Error Code: 49</a></li>
+        
             <li><a href="#error-code-50">Error Code: 50</a></li>
         
             <li><a href="#error-code-51">Error Code: 51</a></li>
@@ -1114,6 +1116,14 @@ when submitting an <code>ASSIGN</code> request.</p>
 in Pardot.</p>
 <p><strong>Solution</strong>: Verify that the visit ID was typed
 correctly and matches the intended visit in Pardot.</p>
+<h2 id="error-code-49"><a href="#error-code-49"></a>Error Code: 49</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;49&quot;&gt;Access Denied&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: User is not authorized to perform the requested operation either due to access restrictions or forbidden method of passing credentials</p>
+<p><strong>Solution</strong>: Verify user has required access to perform the requested operation.  Ensure credentials are passed via a supported method as per the API documentation.  Contact customer support if problem persists.</p>
 <h2 id="error-code-50"><a href="#error-code-50"></a>Error Code: 50</h2>
 <pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
     &lt;err code=&quot;50&quot;&gt;Invalid boolean&lt;/err&gt;
