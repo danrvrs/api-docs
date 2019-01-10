@@ -7,7 +7,7 @@
         
         
         <link rel="canonical" href="http://developer.pardot.com/kb/api-version-3/email-templates/">
-        <link rel="shortcut icon" href="favicon.ico">
+        <link rel="shortcut icon" href="../../../favicon.ico">
         
 
         <title>Email Templates - Pardot API Documentation</title>
@@ -333,12 +333,16 @@
         
             <li><a href="#supported-operations">Supported Operations</a></li>
         
+            <li><a href="#supported-parameters">Supported Parameters</a></li>
+        
             <li><a href="#xml-response-format">XML Response Format</a></li>
         
     
         <li class="main "><a href="#list-one-to-one-email-templates">List One to One Email Templates</a></li>
         
             <li><a href="#supported-operations_1">Supported Operations</a></li>
+        
+            <li><a href="#supported-parameters_1">Supported Parameters</a></li>
         
             <li><a href="#xml-response-format_1">XML Response Format</a></li>
         
@@ -369,6 +373,25 @@
 <td><code>/api/emailTemplate/version/3/do/read/id/&lt;email template id&gt;</code></td>
 <td><code>user_key, api_key, emailTemplateId</code></td>
 <td>Returns the data for the email template specified by <code>&lt;id&gt;</code>. <code>&lt;id&gt;</code> is the Pardot ID of the target email template.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="supported-parameters"><a href="#supported-parameters-"></a>Supported Parameters</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>archived</td>
+<td></td>
+<td>boolean</td>
+<td>When set to true, archived and unarchived email templates are returned from the endpoint. When false, unarchived templates will be returned and archived templates will not be found (as if no email template exists for the specified ID). <em>Defaults to</em> <code>false</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -480,6 +503,25 @@
 <td><code>/api/emailTemplate/version/3/do/listOneToOne</code></td>
 <td><code>user_key, api_key</code></td>
 <td>Returns a list of email templates which are enabled for use in one to one emails.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="supported-parameters_1"><a href="#71862-supported-parameters-"></a>Supported Parameters</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>archived</td>
+<td></td>
+<td>boolean</td>
+<td>When set to true, archived and unarchived email templates are returned from the endpoint. <em>Defaults to</em> <code>false</code>.</td>
 </tr>
 </tbody>
 </table>

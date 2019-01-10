@@ -7,7 +7,7 @@
         
         
         <link rel="canonical" href="http://developer.pardot.com/kb/api-version-4/prospects/">
-        <link rel="shortcut icon" href="favicon.ico">
+        <link rel="shortcut icon" href="../../../favicon.ico">
         
 
         <title>Prospects - Pardot API Documentation</title>
@@ -1016,7 +1016,33 @@
 &lt;/prospects&gt;
 </code></pre>
 
-<p>If using <code>batchCreate</code>, you'll need to provide a valid email address for each prospect. The <code>batchUpdate</code>  endpoints allow the use of prospect IDs and CRM FIDs and <code>batchUpsert</code> allows the use of prospect IDs, CRM FIDs, and prospect Email Addresses.</p>
+<p>JSON Update Example</p>
+<pre><code>{
+    &quot;prospects&quot;: [
+        {&quot;fid&quot;:&quot;1234&quot;,&quot;first_name&quot;:&quot;First name&quot;,&quot;last_name&quot;:&quot;Last name&quot;},
+        {&quot;id&quot;:&quot;10&quot;,&quot;first_name&quot;:&quot;First name&quot;,&quot;last_name&quot;:&quot;Last name&quot;}
+    ]
+}
+</code></pre>
+
+<p>XML Update Example:</p>
+<pre><code>&lt;prospects&gt;
+    &lt;prospect&gt;
+        &lt;fid&gt;1234&lt;/fid&gt;
+        &lt;first_name&gt;New first name&lt;/first_name&gt;
+        &lt;last_name&gt;New last name&lt;/last_name&gt;
+    &lt;/prospect&gt;
+    &lt;prospect&gt;
+        &lt;id&gt;10&lt;/id&gt;
+        &lt;first_name&gt;New first name&lt;/first_name&gt;
+        &lt;last_name&gt;New last name&lt;/last_name&gt;
+    &lt;/prospect&gt;
+&lt;/prospects&gt;
+</code></pre>
+
+<p>If using <code>batchCreate</code>, you'll need to provide a valid email address for each prospect.</p>
+<p>The <code>batchUpsert</code> endpoint allows the use of prospect IDs, CRM FIDs, and prospect Email Addresses as valid record identifiers.</p>
+<p>The <code>batchUpdate</code> endpoint allows the use of prospect IDs and CRM FIDs.  Updating by prospect Email Address is not supported - a prospect ID or CRM FID is required as a valid record identifier.  You may query by email address to get record identifiers.</p>
 <p><strong><em>Example:</em></strong></p>
 <p>/api/prospect/version/4/do/batchUpdate?prospects={"prospects":{"1337":{"first_name":"New first name","last_name":"New last name"},"1234":{"first_name":"New first name","last_name":"New last name"}}}&amp;api_key=&amp;user_key=</p>
 <p><strong>Note:</strong> The return value will either be XML or JSON (XML by default. If you want JSON, then add "&amp;format=json" to your HTTP query).</p>
