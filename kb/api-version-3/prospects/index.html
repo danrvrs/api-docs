@@ -493,6 +493,12 @@
 <td>Selects prospects that have never been active. Prospects are considered active if a prospect's <code>last_activity_at</code> is null. See <a href="../../object-field-references#prospect">Prospect</a> in <a href="../../object-field-references">Object Field References</a>.</td>
 </tr>
 <tr>
+<td><code>limit_related_records</code></td>
+<td><code>boolean</code></td>
+<td><code>true, false</code></td>
+<td>limit number of visitor_activity records returned on prospect/read to 2000. When set to false or not specified the system will return all the available visitor records for the requested prospect, but the operation may timeout if there are too many related records.</td>
+</tr>
+<tr>
 <td><code>list_id</code></td>
 <td><code>integer</code></td>
 <td><code>&lt;any positive integer&gt;</code></td>
