@@ -656,8 +656,8 @@
 <h2 id="assigning-and-reassigning-visitors">Assigning and Reassigning Visitors</h2>
 <p>To assign/reassign a visitor, both the visitor to be assigned and the target prospect of the assignment must be defined.  Visitors are specified by their Pardot ID.  Prospects can be specified by their Pardot ID or by their email address.  Possible combinations of parameters are shown below.  Developers are responsible for substituting specific values for parameters denoted by <code>&lt;carets&gt;</code>.</p>
 <p><strong><em>Examples:</em></strong></p>
-<pre><code>/api/visitor/version/3/do/assign/id/&lt;visitor_id&gt;?prospect_email=&lt;prospect_email&gt;&amp;api_key=&lt;api_key&gt;&amp;user_key=&lt;user_key&gt;
-/api/visitor/version/3/do/assign/id/&lt;visitor_id&gt;?prospect_id=&lt;prospect_id&gt;&amp;api_key=&lt;api_key&gt;&amp;user_key=&lt;user_key&gt;
+<pre><code>/api/visitor/version/3/do/assign/id/&lt;visitor_id&gt;?prospect_email=&lt;prospect_email&gt;
+/api/visitor/version/3/do/assign/id/&lt;visitor_id&gt;?prospect_id=&lt;prospect_id&gt;
 </code></pre>
 
 <p>XML responses to <code>assign</code> requests are identical to <code>read</code> requests, but reflect the new visitor assignment in the <code>&lt;prospect&gt;</code> node.</p></div>

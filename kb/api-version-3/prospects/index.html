@@ -924,17 +924,17 @@
 <h2 id="assigning-and-reassigning-prospects"><a href="#assigning-and-reassigning-prospects-"></a>Assigning and Reassigning Prospects</h2>
 <p>To assign/reassign a prospect, both the prospect to be assigned and the target user or group of the assignment must be defined. Prospects can be specified by their Pardot ID or email address. Users or groups can be specified by their Pardot user ID, email address, or Pardot group ID. Possible combinations of parameters are shown below. Developers are responsible for substituting specific values for parameters denoted by <code>&lt;carets&gt;</code>.</p>
 <p><strong><em>Examples:</em></strong></p>
-<p>/api/prospect/version/3/do/assign/email/?user_email=&amp;api_key=&amp;user_key=</p>
-<p>/api/prospect/version/3/do/assign/email/?user_id=&amp;api_key=&amp;user_key=</p>
-<p>/api/prospect/version/3/do/assign/email/?group_id=&amp;api_key=&amp;user_key=</p>
-<p>/api/prospect/version/3/do/assign/id/?user_email=&amp;api_key=&amp;user_key=</p>
-<p>/api/prospect/version/3/do/assign/id/?user_id=&amp;api_key=&amp;user_key=</p>
-<p>/api/prospect/version/3/do/assign/id/?group_id=&amp;api_key=&amp;user_key=</p>
+<p>/api/prospect/version/3/do/assign/email/?user_email=</p>
+<p>/api/prospect/version/3/do/assign/email/?user_id=</p>
+<p>/api/prospect/version/3/do/assign/email/?group_id=</p>
+<p>/api/prospect/version/3/do/assign/id/?user_email=</p>
+<p>/api/prospect/version/3/do/assign/id/?user_id=</p>
+<p>/api/prospect/version/3/do/assign/id/?group_id=</p>
 <p>XML responses to <code>assign</code> requests are identical to <code>read</code> requests, but reflect the new prospect assignment in the <code>&lt;assigned_to&gt;</code> node.</p>
 <p><a name="14833-creating-prospects" id="creating-prospects"></a></p>
 <h2 id="creating-prospects"><a href="#creating-prospects-"></a>Creating Prospects</h2>
 <p>To create a prospect via the API, only a valid and unique email address is required. Values for any other prospect fields may also be provided in the <code>create</code> request. Developers are responsible for substituting specific values for parameters denoted by <code>&lt;carets&gt;</code>.</p>
-<p><em><strong>Example:</strong> Creating a new prospect</em>/api/prospect/version/3/do/create/email/<a href="mailto:new_prospect@pardot.com">new_prospect@pardot.com</a>?first_name=New&amp;last_name=Prospect&amp;api_key=&amp;user_key=</p>
+<p><em><strong>Example:</strong> Creating a new prospect</em>/api/prospect/version/3/do/create/email/<a href="mailto:new_prospect@pardot.com">new_prospect@pardot.com</a>?first_name=New&amp;last_name=Prospect</p>
 <p>XML responses to <code>create</code> requests are identical to <code>update</code> and <code>read</code> requests. If no <code>campaign_id</code> value is provided, the new prospect will be automatically assigned to the oldest existing campaign.</p>
 <p><a name="14833-updating-field-values" id="updating-field-values"></a></p>
 <h2 id="endpoints-for-batch-processing"><a href="#endpoints-batch-processing-"></a>Endpoints for Batch Processing</h2>
@@ -981,36 +981,37 @@
 
 <p>If using <code>batchCreate</code>, you'll need to provide a valid and unique email address for each prospect. The <code>batchUpdate</code> and <code>batchUpsert</code> endpoints allow the use of a prospect ID or prospect email address.</p>
 <p><strong><em>Example:</em></strong></p>
-<p>/api/prospect/version/3/do/batchUpdate?prospects={"prospects":{"some@email.com":{"first_name":"New first name","last_name":"New last name"},"1234":{"first_name":"New first name","last_name":"New last name"}}}&amp;api_key=&amp;user_key=</p>
+<p>/api/prospect/version/3/do/batchUpdate?prospects={"prospects":{"some@email.com":{"first_name":"New first name","last_name":"New last name"},"1234":{"first_name":"New first name","last_name":"New last name"}}}</p>
 <p><strong>Note:</strong> The return value will either be XML or JSON (XML by default. If you want JSON, then add "&amp;format=json" to your HTTP query).</p>
 <h2 id="updating-field-values"><a href="#updating-field-values-"></a>Updating Field Values</h2>
 <p>Modifying values of prospect data fields is done by submitting an <code>update</code> request with parameters for each field to be updated. Each parameter is formatted as <code>&lt;field_name&gt;=&lt;value&gt;</code>. Custom field values are updated using the same syntax.</p>
-<p><em><strong>Example:</strong> Updating the phone number of a prospect whose email address is</em> <code>bob@pardot.com</code>: /api/prospect/version/3/do/update/email/<a href="mailto:bob@pardot.com">bob@pardot.com</a>?phone=888-123-4567&amp;api_key=&amp;user_key=</p>
+<p><em><strong>Example:</strong> Updating the phone number of a prospect whose email address is</em> <code>bob@pardot.com</code>: /api/prospect/version/3/do/update/email/<a href="mailto:bob@pardot.com">bob@pardot.com</a>?phone=888-123-4567</p>
 <p>Only values that are specifically named in the request are updated. All others are left unchanged. To clear a value, submit an <code>update</code> request containing a parameter with no specified value, such as <code>phone=</code>.</p>
 <p><strong><em>Note:</em></strong> Any field that is set to record multiple responses cannot have its values cleared this way.</p>
 <p><a name="14833-updating-fields-with-predefined-values" id="updating-fields-with-predefined-values"></a></p>
 <h2 id="updating-fields-with-predefined-values"><a href="#updating-fields-with-predefined-values-"></a>Updating Fields with Predefined Values</h2>
 <p>Modifying values of prospect data fields with predefined values is accomplished through an <code>update</code> request with parameters for each field to be updated. Each parameter is formatted as <code>&lt;field_name&gt;=&lt;value&gt;</code> where <code>&lt;value&gt;</code> matches the predefined field value. Custom field values are updated using the same syntax.</p>
-<p><em><strong>Example:</strong> Updating the category of a prospect whose email address is</em> <code>bob@pardot.com</code> *to the category <code>consumer</code>: /api/prospect/version/3/do/update/email/<a href="mailto:bob@pardot.com">bob@pardot.com</a>?category=consumer&amp;api_key=&amp;user_key=</p>
+<p><em><strong>Example:</strong> Updating the category of a prospect whose email address is</em> <code>bob@pardot.com</code> *to the category <code>consumer</code>: /api/prospect/version/3/do/update/email/<a href="mailto:bob@pardot.com">bob@pardot.com</a>?category=consumer</p>
 <p><a name="14833-updating-fields-with-multiple-values" id="updating-fields-with-multiple-values"></a></p>
 <h2 id="updating-fields-with-multiple-values"><a href="#updating-fields-with-multiple-values-"></a>Updating Fields with Multiple Values</h2>
 <p>Updating field values with multiple values follows the same convention as fields with predefined values, but requires a different parameter naming scheme to allow multiplicity. An <code>update</code> request is submitted with parameters formatted as <code>&lt;field_name&gt;_&lt;count&gt;=&lt;field_value&gt;</code> where <code>&lt;count&gt;</code> is an integer denoting the current parameter's place in sequence. <code>&lt;count&gt;</code> must start at 0 and increase by 1 until all desired values are submitted.</p>
-<p><em><strong>Example:</strong> Modifying the values of a custom field with field name</em> <code>past_jobs</code> <em>for a prospect with a Pardot ID of</em> <code>5</code>: /api/prospect/version/3/do/update/id/5?past_jobs_0=janitor&amp;past_jobs_1=security&amp;api_key=&amp;user_key=</p>
+<p><em><strong>Example:</strong> Modifying the values of a custom field with field name</em> <code>past_jobs</code> <em>for a prospect with a Pardot ID of</em> <code>5</code>: /api/prospect/version/3/do/update/id/5?past_jobs_0=janitor&amp;past_jobs_1=security</p>
 <p><strong>Note:</strong> Checkbox and multi-select fields are the only field types that can be updated in this manner. To clear all of the values for a checkbox or multi-select field, use <code>&lt;field_name&gt;_0=</code>. To clear specific values, just set the values that should remain in the prospect record using the method above.</p>
 <p><a name="14833-updating-email-list-subscriptions" id="updating-email-list-subscriptions"></a></p>
 <h2 id="updating-email-list-subscriptions"><a href="#updating-email-list-subscriptions-"></a>Updating Email List Subscriptions</h2>
 <p>To modify email list subscriptions for a prospect, the Pardot ID of the email list is required. Once the ID is obtained, an <code>update</code> is submitted with parameters formatted as <code>list_&lt;list_id&gt;=1</code> to create a subscription and <code>list_&lt;list_id&gt;=0</code> to end a subscription.</p>
-<p><em><strong>Example:</strong> Adding a prospect whose email address is</em> <code>bob@pardot.com</code> <em>to an email list with Pardot ID</em> <code>8</code>: /api/prospect/version/3/do/update/email/<a href="mailto:bob@pardot.com">bob@pardot.com</a>?list_8=1&amp;api_key=&amp;user_key=</p>
+<p><em><strong>Example:</strong> Adding a prospect whose email address is</em> <code>bob@pardot.com</code> <em>to an email list with Pardot ID</em> <code>8</code>: /api/prospect/version/3/do/update/email/<a href="mailto:bob@pardot.com">bob@pardot.com</a>?list_8=1</p>
 <p>Requests that attempt to subscribe a prospect to lists that it is already subscribed to are ignored. Unsubscribe requests are handled similarly.</p>
 <p><a name="14833-updating-profile-criteria-matching-statuses" id="updating-profile-criteria-matching-statuses"></a></p>
 <h2 id="updating-profile-criteria-matching-statuses"><a href="#updating-profile-criteria-matching-statuses-"></a>Updating Profile Criteria Matching Statuses</h2>
 <p>To modify a prospect's matching status for associated profile criteria, the Pardot ID of the profile criteria is required. Once the ID is obtained, an <code>update</code> is submitted with parameters formatted as <code>profile_criteria_&lt;profile_criteria_id&gt;=&lt;status&gt;</code>. The value of <code>&lt;status&gt;</code> may be either <code>match</code>, <code>nomatch</code>, or <code>unknown</code>.</p>
-<p><em><strong>Example:</strong> Setting a profile criteria for a prospect whose email address is</em> <code>bob@pardot.com</code> <em>to</em> <code>match</code>: /api/prospect/version/3/do/update/email/<a href="mailto:bob@pardot.com">bob@pardot.com</a>?profile_criteria_8=match&amp;api_key=&amp;user_key=<em><strong>Example:</strong> Setting a profile criteria for a prospect with Pardot ID</em> <code>58</code> <em>to</em> <code>nomatch</code>: /api/prospect/version/3/do/update/id/58?profile_criteria_8=nomatch&amp;api_key=&amp;user_key=</p>
+<p><em><strong>Example:</strong> Setting a profile criteria for a prospect whose email address is</em> <code>bob@pardot.com</code> <em>to</em> <code>match</code>: /api/prospect/version/3/do/update/email/<a href="mailto:bob@pardot.com">bob@pardot.com</a>?profile_criteria_8=match</p>
+<p><em><strong>Example:</strong> Setting a profile criteria for a prospect with Pardot ID</em> <code>58</code> <em>to</em> <code>nomatch</code>: /api/prospect/version/3/do/update/id/58?profile_criteria_8=nomatch</p>
 <p>Only profile criteria that belong to the profile associated with the prospect can be updated using this method. Requests to update profile criteria not associated with the assigned profile will be ignored. Using any matching status values other than <code>match</code>, <code>nomatch</code>, or <code>unknown</code> will result in an error message. See <a href="../../error-codes-messages">Error Codes &amp; Messages</a> for details.</p>
 <p><a name="14833-updating-prospect-account-matching-statuses" id="updating-prospect-account-matching-statuses"></a></p>
 <h2 id="updating-prospect-account-associations"><a href="#updating-prospect-account-associations-"></a>Updating Prospect Account Associations</h2>
 <p>To modify a prospect's matching status for associated prospect account, the Pardot ID of the prospect account is required. Once the ID is obtained, an <code>update</code> is submitted with parameters formatted as <code>prospect_account_id=&lt;id&gt;</code>.</p>
-<p><em><strong>Example:</strong> Setting a prospect account for a prospect whose email address is</em> <code>bob@pardot.com</code> <em>to</em> <code>match</code>: /api/prospect/version/3/do/update/email/<a href="mailto:bob@pardot.com">bob@pardot.com</a>?prospect_account_id=&amp;api_key=&amp;user_key=</p>
+<p><em><strong>Example:</strong> Setting a prospect account for a prospect whose email address is</em> <code>bob@pardot.com</code> <em>to</em> <code>match</code>: /api/prospect/version/3/do/update/email/<a href="mailto:bob@pardot.com">bob@pardot.com</a>?prospect_account_id=</p>
 <p>A prospect account with the id must exist, and can not be set if a CRM connector is set up in the account.</p></div>
         </div>
 

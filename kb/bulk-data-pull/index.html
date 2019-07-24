@@ -361,7 +361,8 @@
 <p>To accomplish this, as you process the query results in your code, store a high water mark value - the largest <code>id</code> or most recent <code>created_at</code> or <code>updated_at</code> value. Then, on your next query, send that high water mark value as the <code>id_greater_than</code>, <code>created_after</code>, or <code>updated_after</code> search filter parameter value.</p>
 <h3 id="bulk-api-request-response-samples">Bulk API Request &amp; Response Samples</h3>
 <p>Example Request &amp; Response (XML)</p>
-<pre><code class="bash">curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?user_key=1234567890abcdef1234567890abcdef&amp;api_key=fedcba0987654321fedcba0987654321&amp;output=bulk
+<pre><code class="bash">curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?output=bulk \
+-H &quot;Authorization: user_key=1234567890abcdef1234567890abcdef, api_key=fedcba0987654321fedcba0987654321&quot;
 </code></pre>
 
 <pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
@@ -393,7 +394,8 @@
 </code></pre>
 
 <p>Example Request &amp; Response (JSON)</p>
-<pre><code class="bash">curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?user_key=1234567890abcdef1234567890abcdef&amp;api_key=fedcba0987654321fedcba0987654321&amp;output=bulk&amp;format=json
+<pre><code class="bash">curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?output=bulk&amp;format=json \
+-H &quot;Authorization: user_key=1234567890abcdef1234567890abcdef, api_key=fedcba0987654321fedcba0987654321&quot;
 </code></pre>
 
 <pre><code class="json">{
@@ -435,7 +437,8 @@
 1. Log in to the Pardot API
 2. Pull all visitor activity created after yesterday at midnight (<code>2016-03-29T00:00:00</code>) and before tonight at midnight (<code>2016-03-30T00:00:00</code>):</p>
 <p>Example Request &amp; Response (JSON)</p>
-<pre><code class="bash">curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?user_key=X&amp;api_key=Y&amp;output=bulk&amp;format=json&amp;created_after=2016-03-29T00:00:00&amp;created_before=2016-03-30T00:00:00&amp;sort_by=created_at&amp;sort_order=ascending
+<pre><code class="bash">curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?output=bulk&amp;format=json&amp;created_after=2016-03-29T00:00:00&amp;created_before=2016-03-30T00:00:00&amp;sort_by=created_at&amp;sort_order=ascending \
+-H &quot;Authorization: user_key=1234567890abcdef1234567890abcdef, api_key=fedcba0987654321fedcba0987654321&quot;
 </code></pre>
 
 <pre><code class="json">{
@@ -462,7 +465,8 @@
 <li>Pull all visitor activity created after your high water mark (<code>2016-03-29T06:00:00</code>) and before tonight at midnight (<code>2016-03-30T00:00:00</code>):</li>
 </ol>
 <p>Example Request &amp; Response (JSON)</p>
-<pre><code class="bash">curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?user_key=X&amp;api_key=Y&amp;output=bulk&amp;format=json&amp;created_after=2016-03-29T06:00:00&amp;created_before=2016-03-30T00:00:00&amp;sort_by=created_at&amp;sort_order=ascending
+<pre><code class="bash">curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?output=bulk&amp;format=json&amp;created_after=2016-03-29T06:00:00&amp;created_before=2016-03-30T00:00:00&amp;sort_by=created_at&amp;sort_order=ascending \
+-H &quot;Authorization: user_key=1234567890abcdef1234567890abcdef, api_key=fedcba0987654321fedcba0987654321&quot;
 </code></pre>
 
 <pre><code class="json">{
@@ -490,7 +494,8 @@
 <li>Pull all visitor activity created after your high water mark (<code>2016-03-29T14:00:00</code>) and before tonight at midnight (<code>2016-03-30T00:00:00</code>):</li>
 </ol>
 <p>Example Request &amp; Response (JSON)</p>
-<pre><code class="bash">curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?user_key=X&amp;api_key=Y&amp;output=bulk&amp;format=json&amp;created_after=2016-03-29T14:00:00&amp;created_before=2016-03-30T00:00:00&amp;sort_by=created_at&amp;sort_order=ascending
+<pre><code class="bash">curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?output=bulk&amp;format=json&amp;created_after=2016-03-29T14:00:00&amp;created_before=2016-03-30T00:00:00&amp;sort_by=created_at&amp;sort_order=ascending \
+-H &quot;Authorization: user_key=1234567890abcdef1234567890abcdef, api_key=fedcba0987654321fedcba0987654321&quot;
 </code></pre>
 
 <pre><code class="json">{

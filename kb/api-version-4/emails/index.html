@@ -715,8 +715,7 @@ provided.</p>
 <h2 id="example-requests"><a href="#example-requests-"></a>Example Requests</h2>
 <p>This API request example made with cURL, will immediately send an email based on a template to a single prospect.</p>
 <pre><code>curl https://pi.pardot.com/api/email/version/4/do/send \
---data-urlencode user_key={user_key} \
---data-urlencode api_key={api_key} \
+-H &quot;Authorization: Pardot user_key={user_key},api_key={api_key}&quot; \
 --data-urlencode campaign_id=54321 \
 --data-urlencode prospect_email=prospect@somecompany.com \
 --data-urlencode email_template_id=6789 \
@@ -906,8 +905,7 @@ provided.</p>
 <h2 id="example-requests_1"><a href="#example-requests-"></a>Example Requests</h2>
 <p>This API request example made with cURL, will schedule an email based on a template to be sent on October 31st at 5pm GMT-4 to 4 prospect lists with 2 suppression lists. It will be sent from the assigned user, if one is assigned, and it also assigns 3 tags to the email.</p>
 <pre><code>curl https://pi.pardot.com/api/email/version/4/do/send \
---data-urlencode user_key={user_key} \
---data-urlencode api_key={api_key} \
+-H &quot;Authorization: Pardot user_key={user_key},api_key={api_key}&quot; \
 --data-urlencode campaign_id=54321 \
 --data-urlencode from_assigned_user=1 \
 --data-urlencode email_template_id=6789 \

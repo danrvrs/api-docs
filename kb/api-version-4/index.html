@@ -355,7 +355,7 @@
 <h1 id="what-is-version-4">What is Version 4?</h1>
 <p>In order to accommodate multiple prospects with the same email address,
 we have created a new version of our APIs - version 4.
-If your Pardot org has this feature enabled now, then you must use version 4. 
+If your Pardot org has this feature enabled now, then you must use version 4.
 If your Pardot org does not have this featured enabled, you must use version 3.</p>
 <p>To determine if your Pardot org has this feature enabled, <a href="http://help.pardot.com/customer/portal/articles/2461386-how-can-i-find-out-if-my-account-allows-multiple-prospects-with-the-same-email-address-">check out this guide.</a></p>
 <p>For more information on the API in general, check out the <a href="../../">Overview Page</a>.</p>
@@ -366,7 +366,7 @@ If your Pardot org does not have this featured enabled, you must use version 3.<
 and you use the api, you will need to follow the guidelines below.</p>
 <h2 id="determining-when-these-changes-are-applicable">Determining when these changes are applicable</h2>
 <p>As soon your Pardot org is upgraded to allow multiple prospects with the same email address, your current API session will be cleared and you must log in again.
-Upon logging in, a new field will be returned in the login response. 
+Upon logging in, a new field will be returned in the login response.
 This will be your indication that you may no longer use version 3 (or any other previous version), and must now use the version 4 syntax.
 Here's what that will look like:</p>
 <p>Request:</p>
@@ -399,12 +399,12 @@ message body: email=&lt;email&gt;&amp;password=&lt;password&gt;&amp;user_key=&lt
 </code></pre>
 
 <h2 id="prospect-api-changes">Prospect API changes</h2>
-<p>Most of the changes in version 4 occur around the prospect APIs. 
+<p>Most of the changes in version 4 occur around the prospect APIs.
 When you begin using the version 4 APIs, your logic should know about these changes (<a href="../../kb/api-version-4/prospects">full documentation can be found here</a>)</p>
 <ul>
 <li><strong>New reference field:</strong>  Prospects can now be referenced using the Salesforce CRM Identifier, known to the api as the <code>fid</code> field.
-This <code>fid</code> field refers to the id of the Lead or Contact record in Salesforce. 
-You can find the lead id (begins with 00Q) or the contact id (begins with 003) in the URL when viewing a lead or contact as seen below. 
+This <code>fid</code> field refers to the id of the Lead or Contact record in Salesforce.
+You can find the lead id (begins with 00Q) or the contact id (begins with 003) in the URL when viewing a lead or contact as seen below.
 Or, you can get multiple contacts or lead ids from Salesforce using the export tool.
 <img src="/img/lead_identifier_example.png" width="100%"></li>
 <li><strong>Create:</strong> Prospects can still be created with a referenced <code>email</code> address.
@@ -412,7 +412,7 @@ If you call the create api with the same email address multiple times, each call
 Previously, you would get an error.</li>
 <li><strong>Read:</strong> When making a read query, querying by <code>email</code> will return all prospects that share that email address.
 Querying by Pardot <code>id</code> or Salesforce <code>fid</code> will only return the one matching prospect.</li>
-<li><strong>Update:</strong> Prospects can no longer be updated when referenced via <code>email</code> alone. 
+<li><strong>Update:</strong> Prospects can no longer be updated when referenced via <code>email</code> alone.
 This is because there may now be multiple prospects with the same email address.
 Instead, you must use either the Pardot <code>id</code> or Salesforce <code>fid</code> references.</li>
 <li><strong>Upsert:</strong> Upsert query by <code>email</code> will <em>always</em> create a new prospect.

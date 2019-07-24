@@ -696,9 +696,9 @@
 <h2 id="updating-field-values"><a href="#updating-field-values-"></a>Updating Field Values</h2>
 <p>Modifying values of opportunity data fields is done by submitting an <code>update</code> request with parameters for each field to be updated. Each parameter is formatted as <code>&lt;field_name&gt;=&lt;value&gt;</code>.</p>
 <p><strong><em>Example:</em></strong> <em>Updating the value of a opportunity (whose Pardot ID is 27):</em></p>
-<pre><code>POST: /api/opportunity/version/3/do/update/id/27 message body: value=50000&amp;amp;api_key=&amp;amp;user_key=
+<pre><code>POST: /api/opportunity/version/3/do/update/id/27 message body: value=50000
 
-GET: /api/opportunity/version/3/do/update/id/27?value=50000&amp;api_key=&lt;api_key&gt;&amp;user_key=&lt;user_key&gt;
+GET: /api/opportunity/version/3/do/update/id/27?value=50000
 </code></pre>
 
 <p>Only values that are specifically named in the request are updated. All others are left unchanged. To clear a value, submit an <code>update</code> request containing a parameter with no specified value, such as <code>status=</code>.</p></div>
