@@ -362,7 +362,7 @@
 <h3 id="bulk-api-request-response-samples">Bulk API Request &amp; Response Samples</h3>
 <p>Example Request &amp; Response (XML)</p>
 <pre><code class="bash">curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?output=bulk \
--H &quot;Authorization: user_key=1234567890abcdef1234567890abcdef, api_key=fedcba0987654321fedcba0987654321&quot;
+-H &quot;Authorization: Pardot user_key=1234567890abcdef1234567890abcdef, api_key=fedcba0987654321fedcba0987654321&quot;
 </code></pre>
 
 <pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
@@ -395,7 +395,7 @@
 
 <p>Example Request &amp; Response (JSON)</p>
 <pre><code class="bash">curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?output=bulk&amp;format=json \
--H &quot;Authorization: user_key=1234567890abcdef1234567890abcdef, api_key=fedcba0987654321fedcba0987654321&quot;
+-H &quot;Authorization: Pardot user_key=1234567890abcdef1234567890abcdef, api_key=fedcba0987654321fedcba0987654321&quot;
 </code></pre>
 
 <pre><code class="json">{
@@ -438,7 +438,7 @@
 2. Pull all visitor activity created after yesterday at midnight (<code>2016-03-29T00:00:00</code>) and before tonight at midnight (<code>2016-03-30T00:00:00</code>):</p>
 <p>Example Request &amp; Response (JSON)</p>
 <pre><code class="bash">curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?output=bulk&amp;format=json&amp;created_after=2016-03-29T00:00:00&amp;created_before=2016-03-30T00:00:00&amp;sort_by=created_at&amp;sort_order=ascending \
--H &quot;Authorization: user_key=1234567890abcdef1234567890abcdef, api_key=fedcba0987654321fedcba0987654321&quot;
+-H &quot;Authorization: Pardot user_key=1234567890abcdef1234567890abcdef, api_key=fedcba0987654321fedcba0987654321&quot;
 </code></pre>
 
 <pre><code class="json">{
@@ -466,7 +466,7 @@
 </ol>
 <p>Example Request &amp; Response (JSON)</p>
 <pre><code class="bash">curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?output=bulk&amp;format=json&amp;created_after=2016-03-29T06:00:00&amp;created_before=2016-03-30T00:00:00&amp;sort_by=created_at&amp;sort_order=ascending \
--H &quot;Authorization: user_key=1234567890abcdef1234567890abcdef, api_key=fedcba0987654321fedcba0987654321&quot;
+-H &quot;Authorization: Pardot user_key=1234567890abcdef1234567890abcdef, api_key=fedcba0987654321fedcba0987654321&quot;
 </code></pre>
 
 <pre><code class="json">{
@@ -495,7 +495,7 @@
 </ol>
 <p>Example Request &amp; Response (JSON)</p>
 <pre><code class="bash">curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?output=bulk&amp;format=json&amp;created_after=2016-03-29T14:00:00&amp;created_before=2016-03-30T00:00:00&amp;sort_by=created_at&amp;sort_order=ascending \
--H &quot;Authorization: user_key=1234567890abcdef1234567890abcdef, api_key=fedcba0987654321fedcba0987654321&quot;
+-H &quot;Authorization: Pardot user_key=1234567890abcdef1234567890abcdef, api_key=fedcba0987654321fedcba0987654321&quot;
 </code></pre>
 
 <pre><code class="json">{
