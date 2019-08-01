@@ -433,8 +433,6 @@
         
             <li><a href="#error-code-51">Error Code: 51</a></li>
         
-            <li><a href="#error-code-52">Error Code: 52</a></li>
-        
             <li><a href="#error-code-53">Error Code: 53</a></li>
         
             <li><a href="#error-code-54">Error Code: 54</a></li>
@@ -573,37 +571,7 @@
         
             <li><a href="#error-code-126">Error Code: 126</a></li>
         
-            <li><a href="#error-code-128">Error Code: 128</a></li>
-        
-            <li><a href="#error-code-129">Error Code: 129</a></li>
-        
-            <li><a href="#error-code-130">Error Code: 130</a></li>
-        
             <li><a href="#error-code-131">Error Code: 131</a></li>
-        
-            <li><a href="#error-code-132">Error Code: 132</a></li>
-        
-            <li><a href="#error-code-133">Error Code: 133</a></li>
-        
-            <li><a href="#error-code-134">Error Code: 134</a></li>
-        
-            <li><a href="#error-code-135">Error Code: 135</a></li>
-        
-            <li><a href="#error-code-137">Error Code: 137</a></li>
-        
-            <li><a href="#error-code-138">Error Code: 138</a></li>
-        
-            <li><a href="#error-code-139">Error Code: 139</a></li>
-        
-            <li><a href="#error-code-145">Error Code: 145</a></li>
-        
-            <li><a href="#error-code-146">Error Code: 146</a></li>
-        
-            <li><a href="#error-code-166">Error Code: 166</a></li>
-        
-            <li><a href="#error-code-168">Error Code: 168</a></li>
-        
-            <li><a href="#error-code-169">Error Code: 169</a></li>
         
             <li><a href="#error-code-10000">Error Code: 10000</a></li>
         
@@ -1174,14 +1142,6 @@ true.</p>
 <p><strong>Problem</strong>: Object type is invalid.</p>
 <p><strong>Solution</strong>: Change the object type to one of the
 allowed types.</p>
-<h2 id="error-code-52"><a href="#error-code-52"></a>Error Code: 52</h2>
-<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
-    &lt;err code=&quot;52&quot;&gt;Invalid parameter range&lt;/err&gt;
-&lt;/rsp&gt;
-</code></pre>
-
-<p><strong>Problem</strong>: A parameter in the request is outside its acceptable range.</p>
-<p><strong>Solution</strong>: Update the parameter to be within the acceptable range.</p>
 <h2 id="error-code-53"><a href="#error-code-53"></a>Error Code: 53</h2>
 <pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
     &lt;err code=&quot;53&quot;&gt;Client IP address/location must be activated before accessing API&lt;/err&gt;
@@ -1762,30 +1722,6 @@ requests.</p>
 
 <p><strong>Problem</strong>: This authentication method has been deprecated.</p>
 <p><strong>Solution</strong>: Resubmit the request using a valid <a href="../../#authentication">authentication</a> method.</p>
-<h2 id="error-code-128"><a href="#error-code-128"></a>Error Code: 128</h2>
-<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
-    &lt;err code=&quot;128&quot;&gt;Cannot create campaigns&lt;/err&gt;
-&lt;/rsp&gt;
-</code></pre>
-
-<p><strong>Problem</strong>: Campaigns cannot be created for an account that has <a href="https://www.pardot.com/training/connected-campaigns-faq/">Connected Campaigns</a> enabled.</p>
-<p><strong>Solution</strong>: Create a campaign in <a href="https://developer.salesforce.com/docs/api-explorer/sobject/Campaign">Salesforce</a>.</p>
-<h2 id="error-code-129"><a href="#error-code-129"></a>Error Code: 129</h2>
-<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
-    &lt;err code=&quot;129&quot;&gt;Cannot modify campaign name or cost&lt;/err&gt;
-&lt;/rsp&gt;
-</code></pre>
-
-<p><strong>Problem</strong>: Campaign name and cost cannot be modified via the API.</p>
-<p><strong>Solution</strong>: Remove the name and cost fields from the request.</p>
-<h2 id="error-code-130"><a href="#error-code-130"></a>Error Code: 130</h2>
-<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
-    &lt;err code=&quot;130&quot;&gt;One or more of the specified fields are invalid&lt;/err&gt;
-&lt;/rsp&gt;
-</code></pre>
-
-<p><strong>Problem</strong>: One or more of the fields in the CSV is not recognized.</p>
-<p><strong>Solution</strong>: Ensure all of the column headers in the CSV match those in the <a href="../../kb/object-field-references/">field reference</a>. Ensure the number of columns in the CSV matches the number of columns in the header row.</p>
 <h2 id="error-code-131"><a href="#error-code-131"></a>Error Code: 131</h2>
 <pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
     &lt;err code=&quot;131&quot;&gt;Your account is locked due to too many failed login attempts. Reset your password at https://pi.pardot.com/user/passwordReset&lt;/err&gt;
@@ -1794,102 +1730,6 @@ requests.</p>
 
 <p><strong>Problem</strong>: Too many invalid api requests have been made.</p>
 <p><strong>Solution</strong>: Reset your password at https://pi.pardot.com/user/passwordReset</p>
-<h2 id="error-code-132"><a href="#error-code-132"></a>Error Code: 132</h2>
-<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
-    &lt;err code=&quot;132&quot;&gt;Prospect is archived&lt;/err&gt;
-&lt;/rsp&gt;
-</code></pre>
-
-<p><strong>Problem</strong>: The prospect cannot be read because it is in the recycle bin.</p>
-<p><strong>Solution</strong>: Undelete the prospect via the UI or choose another prospect.</p>
-<h2 id="error-code-133"><a href="#error-code-133"></a>Error Code: 133</h2>
-<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
-    &lt;err code=&quot;133&quot;&gt;Up to 2 sort by options are allowed.&lt;/err&gt;
-&lt;/rsp&gt;
-</code></pre>
-
-<p><strong>Problem</strong>: Too many columns were passed into the sort parameter.</p>
-<p><strong>Solution</strong>: Limit sort columns to 2 or fewer.</p>
-<h2 id="error-code-134"><a href="#error-code-134"></a>Error Code: 134</h2>
-<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
-    &lt;err code=&quot;134&quot;&gt;Up to 2 sort order options are allowed.&lt;/err&gt;
-&lt;/rsp&gt;
-</code></pre>
-
-<p><strong>Problem</strong>: Too many orders were passed into the sort parameter.</p>
-<p><strong>Solution</strong>: Limit sort orders to 2 or fewer.</p>
-<h2 id="error-code-135"><a href="#error-code-135"></a>Error Code: 135</h2>
-<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
-    &lt;err code=&quot;135&quot;&gt;When passing a comma-separated value, one of the two values must be id.&lt;/err&gt;
-&lt;/rsp&gt;
-</code></pre>
-
-<p><strong>Problem</strong>: When sorting by multiple columns, one column must be the ID column.</p>
-<p><strong>Solution</strong>: Add the ID column to the request.</p>
-<h2 id="error-code-137"><a href="#error-code-137"></a>Error Code: 137</h2>
-<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
-    &lt;err code=&quot;137&quot;&gt;URL is not valid. Please include a protocol (e.g., http:// or https:// )&lt;/err&gt;
-&lt;/rsp&gt;
-</code></pre>
-
-<p><strong>Problem</strong>: An invalid URL was supplied in the request.</p>
-<p><strong>Solution</strong>: Add one of the requested protocols to the request.</p>
-<h2 id="error-code-138"><a href="#error-code-138"></a>Error Code: 138</h2>
-<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
-    &lt;err code=&quot;138&quot;&gt;Name must be 50 characters or less.&lt;/err&gt;
-&lt;/rsp&gt;
-</code></pre>
-
-<p><strong>Problem</strong>: The name supplied was too long.</p>
-<p><strong>Solution</strong>: Reduce the length of the name field.</p>
-<h2 id="error-code-139"><a href="#error-code-139"></a>Error Code: 139</h2>
-<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
-    &lt;err code=&quot;139&quot;&gt;The supplied name is not valid.&lt;/err&gt;
-&lt;/rsp&gt;
-</code></pre>
-
-<p><strong>Problem</strong>: The name field has an invalid character.</p>
-<p><strong>Solution</strong>: Remove special characters from the name field.</p>
-<h2 id="error-code-145"><a href="#error-code-145"></a>Error Code: 145</h2>
-<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
-    &lt;err code=&quot;145&quot;&gt;Invalid archived parameter specified. Allowed values are true or false.&lt;/err&gt;
-&lt;/rsp&gt;
-</code></pre>
-
-<p><strong>Problem</strong>: The archived parameter only accepts boolean values.</p>
-<p><strong>Solution</strong>: Update the request to send the proper boolean value.</p>
-<h2 id="error-code-146"><a href="#error-code-146"></a>Error Code: 146</h2>
-<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
-    &lt;err code=&quot;146&quot;&gt;Invalid archived parameter specified. Allowed values are true or false.&lt;/err&gt;
-&lt;/rsp&gt;
-</code></pre>
-
-<p><strong>Problem</strong>: The archived parameter only accepts boolean values.</p>
-<p><strong>Solution</strong>: Update the request to send the proper boolean value.</p>
-<h2 id="error-code-166"><a href="#error-code-166"></a>Error Code: 166</h2>
-<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
-    &lt;err code=&quot;166&quot;&gt;The input is not in the required format&lt;/err&gt;
-&lt;/rsp&gt;
-</code></pre>
-
-<p><strong>Problem</strong>: The request input was not specified according to the documentation.</p>
-<p><strong>Solution</strong>: Check the documentation for the desired endpoint and ensure the request is formatted properly.</p>
-<h2 id="error-code-168"><a href="#error-code-168"></a>Error Code: 168</h2>
-<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
-    &lt;err code=&quot;168&quot;&gt;Background Queue is in an invalid state.&lt;/err&gt;
-&lt;/rsp&gt;
-</code></pre>
-
-<p><strong>Problem</strong>: The background processing system encountered an unexpected state.</p>
-<p><strong>Solution</strong>: Try starting the process over, or contact support.</p>
-<h2 id="error-code-169"><a href="#error-code-169"></a>Error Code: 169</h2>
-<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
-    &lt;err code=&quot;169&quot;&gt;Background Queue is an invalid type.&lt;/err&gt;
-&lt;/rsp&gt;
-</code></pre>
-
-<p><strong>Problem</strong>: The background processing system encountered an unexpected state.</p>
-<p><strong>Solution</strong>: Try starting the process over, or contact support.</p>
 <h2 id="error-code-10000"><a href="#error-code-10000"></a>Error Code: 10000</h2>
 <pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
     ...
