@@ -185,6 +185,10 @@
                                 <a href="../api-version-3/visits/">Visits</a>
                             </li>
                         
+                            <li >
+                                <a href="../api-version-3/import/">Import API (for Prospects)</a>
+                            </li>
+                        
                         </ul>
                     </li>
                 
@@ -282,6 +286,10 @@
                         
                             <li >
                                 <a href="../api-version-4/visits/">Visits</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-4/import/">Import API (for Prospects)</a>
                             </li>
                         
                         </ul>
@@ -598,6 +606,38 @@
             <li><a href="#error-code-145">Error Code: 145</a></li>
         
             <li><a href="#error-code-146">Error Code: 146</a></li>
+        
+            <li><a href="#error-code-150">Error Code: 150</a></li>
+        
+            <li><a href="#error-code-151">Error Code: 151</a></li>
+        
+            <li><a href="#error-code-152">Error Code: 152</a></li>
+        
+            <li><a href="#error-code-153">Error Code: 153</a></li>
+        
+            <li><a href="#error-code-154">Error Code: 154</a></li>
+        
+            <li><a href="#error-code-155">Error Code: 155</a></li>
+        
+            <li><a href="#error-code-156">Error Code: 156</a></li>
+        
+            <li><a href="#error-code-157">Error Code: 157</a></li>
+        
+            <li><a href="#error-code-158">Error Code: 158</a></li>
+        
+            <li><a href="#error-code-159">Error Code: 159</a></li>
+        
+            <li><a href="#error-code-160">Error Code: 160</a></li>
+        
+            <li><a href="#error-code-161">Error Code: 161</a></li>
+        
+            <li><a href="#error-code-162">Error Code: 162</a></li>
+        
+            <li><a href="#error-code-163">Error Code: 163</a></li>
+        
+            <li><a href="#error-code-164">Error Code: 164</a></li>
+        
+            <li><a href="#error-code-165">Error Code: 165</a></li>
         
             <li><a href="#error-code-166">Error Code: 166</a></li>
         
@@ -1866,6 +1906,134 @@ requests.</p>
 
 <p><strong>Problem</strong>: The archived parameter only accepts boolean values.</p>
 <p><strong>Solution</strong>: Update the request to send the proper boolean value.</p>
+<h2 id="error-code-150"><a href="#error-code-150"></a>Error Code: 150</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;150&quot;&gt;Input needs to be valid JSON&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The JSON that was submitted was invalid.</p>
+<p><strong>Solution</strong>: Submit valid JSON. A JSON linter may help ensure that the payload is valid before sending.</p>
+<h2 id="error-code-151"><a href="#error-code-151"></a>Error Code: 151</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;151&quot;&gt;Unsupported content-type&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The 'Content-Type' header has an unsupported value for this endpoint.</p>
+<p><strong>Solution</strong>: Check the documentation for the specific endpoint and ensure you are sending the correct Content Type value.</p>
+<h2 id="error-code-152"><a href="#error-code-152"></a>Error Code: 152</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;152&quot;&gt;Request body can't be empty&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The API request has no body.</p>
+<p><strong>Solution</strong>: Ensure that the payload of the request is being sent and is encoded as 'application/json'</p>
+<h2 id="error-code-153"><a href="#error-code-153"></a>Error Code: 153</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;153&quot;&gt;Missing required property in request&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: A required field in the request body could not be found.</p>
+<p><strong>Solution</strong>: Check the documentation and ensure that all required fields in the request body are specified.</p>
+<h2 id="error-code-154"><a href="#error-code-154"></a>Error Code: 154</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;154&quot;&gt;Invalid property in request&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: A field in the request body has an invalid value.</p>
+<p><strong>Solution</strong>: Check the documentation and ensure that the value that is being passed is supported. Note that several values are not supported at this time.</p>
+<h2 id="error-code-155"><a href="#error-code-155"></a>Error Code: 155</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;155&quot;&gt;Can't update. Import must be in &quot;Open&quot; state.&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The import that is trying to be updated is not in the “Open” state.</p>
+<p><strong>Solution</strong>: This import is no longer eligible to receive updates. Create a new import, or update an existing import in the “Open” state.</p>
+<h2 id="error-code-156"><a href="#error-code-156"></a>Error Code: 156</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;156&quot;&gt;Can't start processing. Import has no associated data.&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The import that is trying to be set to “Ready” has no data associated with it.</p>
+<p><strong>Solution</strong>: Upload a batch of data before setting the import to “Ready”.</p>
+<h2 id="error-code-157"><a href="#error-code-157"></a>Error Code: 157</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;157&quot;&gt;Error processing import request. Please contact your Pardot support representative&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The import has no background processing agent associated with it.</p>
+<p><strong>Solution</strong>: This import was improperly created and is unsalvageable. Create a new import and upload the same batch of data to ensure processing occurs.</p>
+<h2 id="error-code-158"><a href="#error-code-158"></a>Error Code: 158</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;158&quot;&gt;Uploading a file was unsuccessful&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The “files” element of the request body could not be found.</p>
+<p><strong>Solution</strong>: Ensure that the CSV being uploaded belongs to a key named “files”.</p>
+<h2 id="error-code-159"><a href="#error-code-159"></a>Error Code: 159</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;159&quot;&gt;The file is not in a valid CSV format&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The CSV file is invalid.</p>
+<p><strong>Solution</strong>: Ensure that the CSV file is properly formatted. There must be 1 header row, at least 1 data row, and the number of columns in each row must match the number of columns in the header.</p>
+<h2 id="error-code-160"><a href="#error-code-160"></a>Error Code: 160</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;160&quot;&gt;The limit of batches per import has been reached&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: Too many batches have been submitted for this import</p>
+<p><strong>Solution</strong>: Create a new import to submit this batch, or submit this batch to an import that has batch capacity.</p>
+<h2 id="error-code-161"><a href="#error-code-161"></a>Error Code: 161</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;161&quot;&gt;The current state of the import does not allow the operation&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: A batch was submitted to an import that is not “Open”</p>
+<p><strong>Solution</strong>: Create a new import to submit this batch, or submit this batch to an import that is “Open”. Processing will not be affected for the import associated with the failed request.</p>
+<h2 id="error-code-162"><a href="#error-code-162"></a>Error Code: 162</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;162&quot;&gt;No file was specified or uploaded&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: No CSV file was submitted</p>
+<p><strong>Solution</strong>: Submit a CSV file in the body of the request under the “files” key.</p>
+<h2 id="error-code-163"><a href="#error-code-163"></a>Error Code: 163</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;163&quot;&gt;Too many files were specified or uploaded&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: Problem: More than 1 file was submitted in a single request</p>
+<p><strong>Solution</strong>: Submit only 1 file per request.</p>
+<h2 id="error-code-164"><a href="#error-code-164"></a>Error Code: 164</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;164&quot;&gt;Daily limit of import batches has been reached&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: Too many batches have been submitted over a 24 hour period. The account limit has been reached.</p>
+<p><strong>Solution</strong>: Wait and try again later.</p>
+<h2 id="error-code-165"><a href="#error-code-165"></a>Error Code: 165</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;164&quot;&gt;column options is invalid&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: API input was incorrectly formatted.</p>
+<p><strong>Solution</strong>: See documentation for correct input formatting.</p>
 <h2 id="error-code-166"><a href="#error-code-166"></a>Error Code: 166</h2>
 <pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
     &lt;err code=&quot;166&quot;&gt;The input is not in the required format&lt;/err&gt;
