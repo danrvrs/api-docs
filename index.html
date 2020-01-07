@@ -4,14 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+        <meta name="description" content="Official documentation for the Pardot API">
         
         <link rel="canonical" href="http://developer.pardot.com/">
-        <link rel="shortcut icon" href="favicon.ico">
-        
-
-        <title>Pardot API Documentation</title>
-
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>Overview - Pardot API Documentation</title>
         <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="./css/font-awesome-4.0.3.css" rel="stylesheet">
         <link href="./css/prettify-1.0.css" rel="stylesheet">
@@ -22,6 +19,15 @@
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
+
+        
+        <script>
+            // Current page data
+            var mkdocs_page_name = "Overview";
+            var mkdocs_page_input_path = "index.md";
+            var mkdocs_page_url = "/";
+        </script>
+        
 
         
     </head>
@@ -505,9 +511,11 @@
 
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
+                
                 <li>
                     <a href="#mkdocs_search_modal" data-toggle="modal"><i class="fa fa-search"></i> Search</a>
                 </li>
+                
                 
                 
                 <li>
@@ -521,7 +529,7 @@
                 
                 
                 <li>
-                    <a href="https://github.com/Pardot/api-docs" target="_blank">
+                    <a href="https://github.com/Pardot/api-docs/" target="_blank">
                         
                             <i class="fa fa-github"></i>
                         
@@ -537,32 +545,19 @@
         <div class="container">
             <div class="col-md-3"><div class="bs-sidebar hidden-print well" role="complementary">
     <ul class="nav bs-sidenav">
-    
         <li class="main active"><a href="#official-pardot-api-documentation">Official Pardot API Documentation</a></li>
-        
             <li><a href="#using-the-api">Using the API</a></li>
-        
             <li><a href="#version-3-and-version-4-differences">Version 3 and Version 4 differences</a></li>
-        
             <li><a href="#changing-the-api-response-format">Changing the API Response Format</a></li>
-        
             <li><a href="#authentication">Authentication</a></li>
-        
             <li><a href="#rate-limits">Rate Limits</a></li>
-        
             <li><a href="#sample-code">Sample Code</a></li>
-        
             <li><a href="#supported-api-wrappers">Supported API wrappers</a></li>
-        
-    
     </ul>
 </div></div>
             <div class="col-md-9 main-content" role="main">
-
-
-
-
-<h1 id="official-pardot-api-documentation">Official Pardot API Documentation</h1>
+                
+                    <h1 id="official-pardot-api-documentation">Official Pardot API Documentation</h1>
 <blockquote>
 <p><strong>IMPORTANT: Support for passing credentials via querystring is deprecated and will be forbidden in a future version of the API. Please update your API client as soon as possible.</strong></p>
 <p>Refer to the <a href="#using-the-api">Using the API &gt; Request Format</a> section below for further details.</p>
@@ -572,7 +567,7 @@
 <li>If you have a question about the API, feel free to <a href="https://help.salesforce.com/articleView?id=000181929&amp;type=1">open a ticket</a> with our Support team.</li>
 <li>To report an inconsistency in the documentation, please <a href="https://github.com/Pardot/api-docs/issues">open an issue on GitHub</a>. <a href="https://github.com/Pardot/api-docs/pulls">Pull requests</a> are welcome as well!</li>
 <li>If you've written your own library or wrapper for Pardot's API, submit a <a href="https://github.com/Pardot/api-docs/pulls">pull request</a> updating the <code>index.md</code> file with a link to your repository, and we'll be glad to consider linking it up.</li>
-<li>For the latest information on updates to the API and related documentation, refer to the <a href="./kb/release-notes">Release Notes</a>.</li>
+<li>For the latest information on updates to the API and related documentation, refer to the <a href="kb/release-notes">Release Notes</a>.</li>
 </ul>
 <h2 id="using-the-api">Using the API</h2>
 <p>The Pardot API allows your application to access current data within Pardot. Through the API, several common operations can be performed on Pardot objects. Operations include:</p>
@@ -656,7 +651,7 @@ Authorization: Pardot api_key=&lt;your_api_key&gt;, user_key=&lt;your_user_key&g
 </tbody>
 </table>
 <p>The ordering of parameters is arbitrary. Parameters are passed using conventional HTML parameter syntax, with <code>'?'</code> indicating the start of the parameter string (for GET requests only) and <code>'&amp;'</code> as the separator between parameters. With the exception of <code>&lt;format&gt;</code> and <code>&lt;params&gt;</code>, all components are required. Data returned from the API is formatted using JSON or XML 1.0 with UTF-8 character encoding. Keep in mind that some characters in the response may be encoded as HTML entities, requiring client-side decoding. Also, keep in mind that all parameters specified in an API request MUST be URL-encoded before they are submitted.</p>
-<p>In general, the API will return XML or JSON containing a current version of the target object's data. However, unsuccessful requests will return a short response containing an error code and message. See <a href="./kb/api-version-3/error-codes-messages">Error Codes &amp; Messages</a> for error descriptions and suggested remedies.</p>
+<p>In general, the API will return XML or JSON containing a current version of the target object's data. However, unsuccessful requests will return a short response containing an error code and message. See <a href="kb/api-version-3/error-codes-messages">Error Codes &amp; Messages</a> for error descriptions and suggested remedies.</p>
 <p><a name="14767-changing-xml-response-format" id="changing-xml-response-format"></a></p>
 <h2 id="version-3-and-version-4-differences">Version 3 and Version 4 differences</h2>
 <p>In order to accommodate a new feature related to prospects,
@@ -677,7 +672,7 @@ If your account requires version 3, you will not see this tag.</p>
 <li><code>full</code> -- Returns all supported data for the Pardot object and all objects associated with it.</li>
 <li><code>simple</code> -- Returns all supported data for the data for the Pardot object.</li>
 <li><code>mobile</code> -- Returns an abbreviated version of the object data. This output format is ideal for mobile applications.</li>
-<li><code>bulk</code> -- Returns basic data for an object (does not provide total object count). Used for querying <a href="./kb/bulk-data-pull/">large amounts of data</a>.</li>
+<li><code>bulk</code> -- Returns basic data for an object (does not provide total object count). Used for querying <a href="kb/bulk-data-pull/">large amounts of data</a>.</li>
 </ul>
 <p>If the output request parameter is not defined, the output format defaults to <code>full</code>. See the XML Response Format sections for each object for details about the formats.</p>
 <h2 id="authentication">Authentication</h2>
@@ -749,11 +744,11 @@ email=&lt;email&gt;&amp;password=&lt;password&gt;&amp;user_key=&lt;user_key&gt;
 <h3 id="daily-requests">Daily Requests</h3>
 <p>Pardot Pro customers are allocated 25,000 API requests per day. Pardot Ultimate customers can make up to 100,000 API requests a day.
 These limits reset at the beginning of the day based on your accounts time zone settings. Any request made exceeding the
-limits will result in an <a href="./kb/error-codes-messages/#error-code-122">error code 122</a></p>
+limits will result in an <a href="/kb/error-codes-messages/#error-code-122">error code 122</a></p>
 <p>You can check you current daily usages in the accounts "usage and limits" page.</p>
 <h3 id="concurrent-requests">Concurrent Requests</h3>
 <p>In order to interact with our API more efficiently, you can have up to five concurrent API requests. Any connection over five
-will result in an <a href="./kb/error-codes-messages/#error-code-66">error code 66</a> response.</p>
+will result in an <a href="/kb/error-codes-messages/#error-code-66">error code 66</a> response.</p>
 <h2 id="sample-code">Sample Code</h2>
 <p>Here's an example of calling the Pardot API using a simple PHP function and the cURL library.</p>
 <p>Note: we strongly recommend <strong>against</strong> using PHP's <code>file_get_contents</code> function to call the Pardot API, since it makes error handling extremely cumbersome.</p>
@@ -863,7 +858,9 @@ echo callPardotApi('https://pi.pardot.com/api/prospect/version/3/do/query',
 <li><a href="https://www.github.com/Pardot/ruby-pardot">ruby-pardot</a></li>
 <li><a href="https://github.com/mneedham91/PyPardot4">python-pypardot4</a> for version 4 of the API</li>
 <li><a href="https://github.com/Crim/pardot-java-client">pardot-java-client</a></li>
-</ul></div>
+</ul>
+                
+            </div>
         </div>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
@@ -878,9 +875,10 @@ echo callPardotApi('https://pi.pardot.com/api/prospect/version/3/do/query',
                     From here you can search these documents. Enter
                     your search terms below.
                 </p>
-                <form role="form">
+                <form id="content_search">
+                    <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" name="q" autocomplete="off" autofocus>
                     </div>
                 </form>
                 <div id="mkdocs-search-results"></div>
@@ -895,7 +893,8 @@ echo callPardotApi('https://pi.pardot.com/api/prospect/version/3/do/query',
         <script src="./js/bootstrap-3.0.3.min.js"></script>
         <script src="./js/prettify-1.0.min.js"></script>
         <script>var base_url = '.';</script>
-        <script data-main="./mkdocs/js/search.js" src="./mkdocs/js/require.js"></script>
-        <script src="./js/base.js"></script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+        <script src="search/main.js" defer></script>
     </body>
 </html>

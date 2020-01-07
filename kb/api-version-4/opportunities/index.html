@@ -4,14 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+        <meta name="description" content="Official documentation for the Pardot API">
         
         <link rel="canonical" href="http://developer.pardot.com/kb/api-version-4/opportunities/">
-        <link rel="shortcut icon" href="../../../favicon.ico">
-        
-
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
         <title>Opportunities - Pardot API Documentation</title>
-
         <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome-4.0.3.css" rel="stylesheet">
         <link href="../../../css/prettify-1.0.css" rel="stylesheet">
@@ -22,6 +19,15 @@
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
+
+        
+        <script>
+            // Current page data
+            var mkdocs_page_name = "Opportunities";
+            var mkdocs_page_input_path = "kb/api-version-4/opportunities.md";
+            var mkdocs_page_url = "/kb/api-version-4/opportunities/";
+        </script>
+        
 
         
     </head>
@@ -505,9 +511,11 @@
 
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
+                
                 <li>
                     <a href="#mkdocs_search_modal" data-toggle="modal"><i class="fa fa-search"></i> Search</a>
                 </li>
+                
                 
                 <li>
                     <a rel="next" href="../list-memberships/">
@@ -530,7 +538,7 @@
                 
                 
                 <li>
-                    <a href="https://github.com/Pardot/api-docs" target="_blank">
+                    <a href="https://github.com/Pardot/api-docs/" target="_blank">
                         
                             <i class="fa fa-github"></i>
                         
@@ -546,39 +554,21 @@
         <div class="container">
             <div class="col-md-3"><div class="bs-sidebar hidden-print well" role="complementary">
     <ul class="nav bs-sidenav">
-    
         <li class="main active"><a href="#querying-opportunities">Querying Opportunities</a></li>
-        
             <li><a href="#supported-operations">Supported Operations</a></li>
-        
             <li><a href="#supported-search-criteria">Supported Search Criteria</a></li>
-        
             <li><a href="#manipulating-the-result-set">Manipulating the Result Set</a></li>
-        
             <li><a href="#supported-sorting-options">Supported Sorting Options</a></li>
-        
             <li><a href="#xml-response-format">XML Response Format</a></li>
-        
-    
         <li class="main "><a href="#using-opportunities">Using Opportunities</a></li>
-        
             <li><a href="#supported-operations_1">Supported Operations</a></li>
-        
             <li><a href="#xml-response-formats">XML Response Formats</a></li>
-        
             <li><a href="#updating-field-values">Updating Field Values</a></li>
-        
-    
     </ul>
 </div></div>
             <div class="col-md-9 main-content" role="main">
-
-
-
-<a href="../../../kb/api-version-3/opportunities">Looking for version 3?</a>
-
-
-<h1 id="querying-opportunities">Querying Opportunities</h1>
+                
+                    <h1 id="querying-opportunities">Querying Opportunities</h1>
 <h2 id="supported-operations">Supported Operations<a name="14770-supported-operations"></a></h2>
 <table>
 <thead>
@@ -594,7 +584,7 @@
 <td><code>query</code></td>
 <td><code>/api/opportunity/version/4/do/query?...</code></td>
 <td><code>user_key, api_key</code></td>
-<td>Returns the opportunities matching the specified criteria parameters. See [Using Opportunities (using-opportunities) for complete descriptions of opportunity <a href="../opportunities#xml-response-formats">XML Response Formats</a>. Also see <a href="../../object-field-references#opportunity">Opportunity</a> in <a href="../../object-field-references">Object Field References</a>.</td>
+<td>Returns the opportunities matching the specified criteria parameters. See [Using Opportunities (using-opportunities) for complete descriptions of opportunity <a href="opportunities#xml-response-formats">XML Response Formats</a>. Also see <a href="../../object-field-references/#opportunity">Opportunity</a> in <a href="../../object-field-references/">Object Field References</a>.</td>
 </tr>
 </tbody>
 </table>
@@ -700,7 +690,7 @@
 <td><code>output</code></td>
 <td><code>simple, mobile</code></td>
 <td></td>
-<td>Specifies the format to be used when returning the results of the query. See <a href="../opportunities#xml-response-formats">XML Response Formats</a> in <a href="../opportunities">Using Opportunities</a> for more details.</td>
+<td>Specifies the format to be used when returning the results of the query. See <a href="opportunities#xml-response-formats">XML Response Formats</a> in <a href="opportunities">Using Opportunities</a> for more details.</td>
 </tr>
 <tr>
 <td><code>sort_by</code></td>
@@ -717,7 +707,7 @@
 </tbody>
 </table>
 <h2 id="supported-sorting-options">Supported Sorting Options</h2>
-<p>The ordering of the results returned by a <code>query</code> request can be changed by specifying <code>sort_by</code> and <code>sort_order</code> parameters. Any of the following values are valid when specifying the <code>sort_by</code> parameter. For a complete list of fields involved in Opportunity queries, see <a href="../../object-field-references#opportunity">Opportunity</a> in <a href="../../object-field-references">Object Field References</a>.</p>
+<p>The ordering of the results returned by a <code>query</code> request can be changed by specifying <code>sort_by</code> and <code>sort_order</code> parameters. Any of the following values are valid when specifying the <code>sort_by</code> parameter. For a complete list of fields involved in Opportunity queries, see <a href="../../object-field-references/#opportunity">Opportunity</a> in <a href="../../object-field-references/">Object Field References</a>.</p>
 <table>
 <thead>
 <tr>
@@ -777,13 +767,13 @@
 </tr>
 <tr>
 <td><code>&lt;opportunity&gt;</code></td>
-<td>The data for an individual Opportunity. See <a href="../opportunities">Using Opportunities</a> for complete descriptions of opportunity <a href="../opportunities#xml-response-formats">XML Response Formats</a>. Also see <a href="../../object-field-references#opportunity">Opportunity</a> in <a href="../../object-field-references">Object Field References</a>. <strong><em>Note:</em></strong> Data concerning an opportunity's activities will NOT be included in a <code>query</code> response. To retrieve this data, use a <code>read</code> request for individual opportunities of interest.</td>
+<td>The data for an individual Opportunity. See <a href="opportunities">Using Opportunities</a> for complete descriptions of opportunity <a href="opportunities#xml-response-formats">XML Response Formats</a>. Also see <a href="../../object-field-references/#opportunity">Opportunity</a> in <a href="../../object-field-references/">Object Field References</a>. <strong><em>Note:</em></strong> Data concerning an opportunity's activities will NOT be included in a <code>query</code> response. To retrieve this data, use a <code>read</code> request for individual opportunities of interest.</td>
 </tr>
 </tbody>
 </table>
 <h1 id="using-opportunities">Using Opportunities</h1>
 <h2 id="supported-operations_1"><a href="#supported-operations-a-name-supported-operations-id-supported-operations-a-"></a>Supported Operations<a name="14772-supported-operations" id="supported-operations"></a></h2>
-<p>For a complete list of fields involved in Opportunities operations, see the <a href="../../object-field-references#opportunity">Opportunity</a> section of <a href="../../object-field-references">Object Field References</a>.</p>
+<p>For a complete list of fields involved in Opportunities operations, see the <a href="../../object-field-references/#opportunity">Opportunity</a> section of <a href="../../object-field-references/">Object Field References</a>.</p>
 <p><strong><em>Note:</em></strong> If a salesforce.com or SugarCRM connector is present in the API user's account, Opportunities can be read, but they cannot be modified (created, updated, deleted or undeleted).</p>
 <table>
 <thead>
@@ -799,13 +789,13 @@
 <td><code>create</code></td>
 <td><code>/api/opportunity /version/4/do/create /prospect_email /&lt;prospect_email&gt;?...</code></td>
 <td><code>user_key, api_key, prospect_email, name, value, probability</code></td>
-<td>Creates a new opportunity using the specified data. <code>prospect_email</code> must correspond to an existing prospect. If there are multiple prospects with that email address, the prospect with the most recent activity date will be used. <code>name</code>, <code>value</code>, and <code>probability</code> must also be specified. See <a href="../../object-field-references#opportunity">Opportunity</a> in <a href="../../object-field-references">Object Field References</a> for other field requirements. <strong><em>Note:</em></strong> If both <code>prospect_email</code> and <code>prospect_id</code> are specified, both must correspond to the same prospect. Otherwise, the API will return an error.</td>
+<td>Creates a new opportunity using the specified data. <code>prospect_email</code> must correspond to an existing prospect. If there are multiple prospects with that email address, the prospect with the most recent activity date will be used. <code>name</code>, <code>value</code>, and <code>probability</code> must also be specified. See <a href="../../object-field-references/#opportunity">Opportunity</a> in <a href="../../object-field-references/">Object Field References</a> for other field requirements. <strong><em>Note:</em></strong> If both <code>prospect_email</code> and <code>prospect_id</code> are specified, both must correspond to the same prospect. Otherwise, the API will return an error.</td>
 </tr>
 <tr>
 <td><code>create</code></td>
 <td><code>/api/opportunity /version/4/do/create /prospect_id /&lt;prospect_id&gt;?...</code></td>
 <td><code>user_key, api_key, prospect_id, name, value, probability</code></td>
-<td>Creates a new opportunity using the specified data. <code>prospect_id</code> must correspond to an existing prospect. <code>name</code>, <code>value</code>, and <code>probability</code> must also be specified. See <a href="../../object-field-references#opportunity">Opportunity</a> in <a href="../../object-field-references">Object Field References</a> for other field requirements. <strong><em>Note:</em></strong> If both <code>prospect_email</code> and <code>prospect_id</code> are specified, both must correspond to the same prospect. Otherwise, the API will return an error.</td>
+<td>Creates a new opportunity using the specified data. <code>prospect_id</code> must correspond to an existing prospect. <code>name</code>, <code>value</code>, and <code>probability</code> must also be specified. See <a href="../../object-field-references/#opportunity">Opportunity</a> in <a href="../../object-field-references/">Object Field References</a> for other field requirements. <strong><em>Note:</em></strong> If both <code>prospect_email</code> and <code>prospect_id</code> are specified, both must correspond to the same prospect. Otherwise, the API will return an error.</td>
 </tr>
 <tr>
 <td><code>read</code></td>
@@ -890,7 +880,7 @@
 <tbody>
 <tr>
 <td><code>&lt;opportunity&gt;</code></td>
-<td>Parent tag. Contains data fields for target opportunity. Forcomplete field listing, see <a href="../../object-field-references#opportunity">Opportunity</a> in <a href="../../object-field-references">Object Field References</a>.</td>
+<td>Parent tag. Contains data fields for target opportunity. Forcomplete field listing, see <a href="../../object-field-references/#opportunity">Opportunity</a> in <a href="../../object-field-references/">Object Field References</a>.</td>
 </tr>
 <tr>
 <td><code>&lt;campaign&gt;</code></td>
@@ -906,7 +896,7 @@
 </tr>
 <tr>
 <td><code>&lt;visitor_activity&gt;</code></td>
-<td>Contains data fields for a visitor activity. For complete field listing, see <a href="../../object-field-references#visitor-activity">Visitor Activity</a> in <a href="../../object-field-references">Object Field References</a>.</td>
+<td>Contains data fields for a visitor activity. For complete field listing, see <a href="../../object-field-references/#visitor-activity">Visitor Activity</a> in <a href="../../object-field-references/">Object Field References</a>.</td>
 </tr>
 </tbody>
 </table>
@@ -919,7 +909,9 @@
 GET: /api/opportunity/version/4/do/update/id/27?value=50000
 </code></pre>
 
-<p>Only values that are specifically named in the request are updated. All others are left unchanged. To clear a value, submit an <code>update</code> request containing a parameter with no specified value, such as <code>status=</code>.</p></div>
+<p>Only values that are specifically named in the request are updated. All others are left unchanged. To clear a value, submit an <code>update</code> request containing a parameter with no specified value, such as <code>status=</code>.</p>
+                
+            </div>
         </div>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
@@ -934,9 +926,10 @@ GET: /api/opportunity/version/4/do/update/id/27?value=50000
                     From here you can search these documents. Enter
                     your search terms below.
                 </p>
-                <form role="form">
+                <form id="content_search">
+                    <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" name="q" autocomplete="off" autofocus>
                     </div>
                 </form>
                 <div id="mkdocs-search-results"></div>
@@ -951,7 +944,8 @@ GET: /api/opportunity/version/4/do/update/id/27?value=50000
         <script src="../../../js/bootstrap-3.0.3.min.js"></script>
         <script src="../../../js/prettify-1.0.min.js"></script>
         <script>var base_url = '../../..';</script>
-        <script data-main="../../../mkdocs/js/search.js" src="../../../mkdocs/js/require.js"></script>
-        <script src="../../../js/base.js"></script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
     </body>
 </html>

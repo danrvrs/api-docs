@@ -4,14 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+        <meta name="description" content="Official documentation for the Pardot API">
         
         <link rel="canonical" href="http://developer.pardot.com/kb/api-version-3/import/">
-        <link rel="shortcut icon" href="../../../favicon.ico">
-        
-
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
         <title>Import API (for Prospects) - Pardot API Documentation</title>
-
         <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome-4.0.3.css" rel="stylesheet">
         <link href="../../../css/prettify-1.0.css" rel="stylesheet">
@@ -22,6 +19,15 @@
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
+
+        
+        <script>
+            // Current page data
+            var mkdocs_page_name = "--Import API (for Prospects)";
+            var mkdocs_page_input_path = "kb/api-version-3/import.md";
+            var mkdocs_page_url = "/kb/api-version-3/import/";
+        </script>
+        
 
         
     </head>
@@ -505,9 +511,11 @@
 
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
+                
                 <li>
                     <a href="#mkdocs_search_modal" data-toggle="modal"><i class="fa fa-search"></i> Search</a>
                 </li>
+                
                 
                 <li>
                     <a rel="next" href="../visits/">
@@ -530,7 +538,7 @@
                 
                 
                 <li>
-                    <a href="https://github.com/Pardot/api-docs" target="_blank">
+                    <a href="https://github.com/Pardot/api-docs/" target="_blank">
                         
                             <i class="fa fa-github"></i>
                         
@@ -546,67 +554,32 @@
         <div class="container">
             <div class="col-md-3"><div class="bs-sidebar hidden-print well" role="complementary">
     <ul class="nav bs-sidenav">
-    
         <li class="main active"><a href="#import-api-overview">Import API Overview</a></li>
-        
             <li><a href="#when-to-use-the-import-api">When to Use the Import API</a></li>
-        
             <li><a href="#what-you-can-do-with-the-import-api">What You Can Do with the Import API</a></li>
-        
             <li><a href="#how-the-import-api-works">How the Import API Works</a></li>
-        
             <li><a href="#limitations">Limitations</a></li>
-        
             <li><a href="#expiration">Expiration</a></li>
-        
-    
         <li class="main "><a href="#getting-started">Getting Started</a></li>
-        
-    
         <li class="main "><a href="#create">Create</a></li>
-        
             <li><a href="#post">POST</a></li>
-        
-    
         <li class="main "><a href="#add-batch">Add Batch</a></li>
-        
             <li><a href="#post_1">POST</a></li>
-        
-    
         <li class="main "><a href="#update">Update</a></li>
-        
             <li><a href="#patch">PATCH</a></li>
-        
-    
         <li class="main "><a href="#read">Read</a></li>
-        
             <li><a href="#get">GET</a></li>
-        
-    
         <li class="main "><a href="#download-errors">Download Errors</a></li>
-        
             <li><a href="#get_1">GET</a></li>
-        
-    
         <li class="main "><a href="#enums">Enums</a></li>
-        
             <li><a href="#import-state">Import State</a></li>
-        
             <li><a href="#import-operation">Import Operation</a></li>
-        
             <li><a href="#object">Object</a></li>
-        
-    
     </ul>
 </div></div>
             <div class="col-md-9 main-content" role="main">
-
-
-
-<a href="../../../kb/api-version-4/import">Looking for version 4?</a>
-
-
-<h1 id="import-api-overview">Import API Overview</h1>
+                
+                    <h1 id="import-api-overview">Import API Overview</h1>
 <p>The Import API provides a programmatic way to insert or update large amounts of data in Pardot. It uses Pardot's existing API structures, patterns, and terminology. The Import API automates the existing prospect <a href="https://help.salesforce.com/articleView?id=pardot_prospects_import.htm&amp;type=0">import feature set</a>. Only prospect import is supported currently.</p>
 <p><strong>IMPORTANT</strong> The user's role must have the Prospect Import ability to start an API import. For more information, see <a href="https://help.salesforce.com/articleView?id=pardot_user_roles.htm">Pardot User Roles</a></p>
 <h2 id="when-to-use-the-import-api">When to Use the Import API</h2>
@@ -707,7 +680,7 @@
 <h3 id="errors">Errors</h3>
 <ul>
 <li>Status code: 4xx</li>
-<li>Error codes: See <a href="../../../kb/error-codes-messages">Error Codes</a></li>
+<li>Error codes: See <a href="../../error-codes-messages/">Error Codes</a></li>
 </ul>
 <hr />
 <h1 id="add-batch">Add Batch</h1>
@@ -728,7 +701,7 @@
 <h3 id="errors_1">Errors</h3>
 <ul>
 <li>Status code: 4xx</li>
-<li>Error codes: See <a href="../../../kb/error-codes-messages">Error Codes</a></li>
+<li>Error codes: See <a href="../../error-codes-messages/">Error Codes</a></li>
 </ul>
 <hr />
 <h1 id="update">Update</h1>
@@ -758,7 +731,7 @@
 <h3 id="errors_2">Errors</h3>
 <ul>
 <li>Status code: 4xx</li>
-<li>Error codes: See <a href="../../../kb/error-codes-messages">Error Codes</a></li>
+<li>Error codes: See <a href="../../error-codes-messages/">Error Codes</a></li>
 </ul>
 <hr />
 <h1 id="read">Read</h1>
@@ -809,7 +782,7 @@
 <h3 id="errors_3">Errors</h3>
 <ul>
 <li>Status code: 4xx</li>
-<li>Error codes: See <a href="../../../kb/error-codes-messages">Error Codes</a></li>
+<li>Error codes: See <a href="../../error-codes-messages/">Error Codes</a></li>
 </ul>
 <hr />
 <h1 id="download-errors">Download Errors</h1>
@@ -823,7 +796,7 @@
 <h3 id="errors_4">Errors</h3>
 <ul>
 <li>Status code: 4xx</li>
-<li>Error codes: See <a href="../../../kb/error-codes-messages">Error Codes</a></li>
+<li>Error codes: See <a href="../../error-codes-messages/">Error Codes</a></li>
 </ul>
 <hr />
 <h1 id="enums">Enums</h1>
@@ -842,7 +815,9 @@
 <h2 id="object">Object</h2>
 <ul>
 <li>"Prospect" : Operate on Prospect</li>
-</ul></div>
+</ul>
+                
+            </div>
         </div>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
@@ -857,9 +832,10 @@
                     From here you can search these documents. Enter
                     your search terms below.
                 </p>
-                <form role="form">
+                <form id="content_search">
+                    <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" name="q" autocomplete="off" autofocus>
                     </div>
                 </form>
                 <div id="mkdocs-search-results"></div>
@@ -874,7 +850,8 @@
         <script src="../../../js/bootstrap-3.0.3.min.js"></script>
         <script src="../../../js/prettify-1.0.min.js"></script>
         <script>var base_url = '../../..';</script>
-        <script data-main="../../../mkdocs/js/search.js" src="../../../mkdocs/js/require.js"></script>
-        <script src="../../../js/base.js"></script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
     </body>
 </html>
