@@ -600,7 +600,7 @@
 <td><code>query</code></td>
 <td><code>/api/visitor/version/3/do/query?...</code></td>
 <td><code>user_key, api_key</code></td>
-<td>Returns the visitors matching the specified criteria parameters. See the <a href="visitors">Using Visitors</a> section for a complete description of visitor <a href="visitors#xml-response-formats">XML Response Formats</a>. Also see <a href="../../object-field-references/#visitor">Visitor</a> in <a href="../../object-field-references/">Object Field References</a>.</td>
+<td>Returns the visitors matching the specified criteria parameters. See the <a href="#using-visitors">Using Visitors</a> section for a complete description of visitor <a href="#xml-response-formats">XML Response Formats</a>. Also see <a href="../../object-field-references/#visitor">Visitor</a> in <a href="../../object-field-references/">Object Field References</a>.</td>
 </tr>
 </tbody>
 </table>
@@ -700,13 +700,13 @@
 <td><code>output</code></td>
 <td><code>string</code></td>
 <td><code>simple, mobile</code></td>
-<td>Specifies the format to be used when returning the results of the query. See <a href="visitors#xml-response-formats">XML Response Formats</a> in <a href="visitors">Using Visitors</a> for more details.</td>
+<td>Specifies the format to be used when returning the results of the query. See <a href="#xml-response-formats">XML Response Formats</a> in <a href="#using-visitors">Using Visitors</a> for more details.</td>
 </tr>
 <tr>
 <td><code>sort_by</code></td>
 <td><code>string</code></td>
 <td><code>created_at, id, updated_at</code></td>
-<td>Specifies the field that should be used to sort the results of the query. See <a href="#14837-supported-sorting-options">Supported Sorting Options</a> for more details.</td>
+<td>Specifies the field that should be used to sort the results of the query. See <a href="#supported-sorting-options">Supported Sorting Options</a> for more details.</td>
 </tr>
 <tr>
 <td><code>sort_order</code></td>
@@ -772,7 +772,7 @@
 </tr>
 <tr>
 <td><code>&lt;visitor&gt;</code></td>
-<td>The data for an individual visitor. See <a href="visitors">Using Visitors</a> for complete descriptions of visitor <a href="visitors#xml-response-formats">XML Response Formats</a>. Also see <a href="../../object-field-references/#visitor">Visitor</a> in <a href="../../object-field-references/">Object Field References</a>. <strong><em>Note:</em></strong> Data concerning a visitor's identified company, referrers, or activities will NOT be included in a <code>query</code> response. To retrieve this data, use a <code>read</code> request to retrieve the data for the visitor of interest.</td>
+<td>The data for an individual visitor. See <a href="#using-visitors">Using Visitors</a> for complete descriptions of visitor <a href="#xml-response-formats">XML Response Formats</a>. Also see <a href="../../object-field-references/#visitor">Visitor</a> in <a href="../../object-field-references/">Object Field References</a>. <strong><em>Note:</em></strong> Data concerning a visitor's identified company, referrers, or activities will NOT be included in a <code>query</code> response. To retrieve this data, use a <code>read</code> request to retrieve the data for the visitor of interest.</td>
 </tr>
 </tbody>
 </table>
@@ -863,7 +863,7 @@
 </tr>
 <tr>
 <td><code>&lt;prospect&gt;</code></td>
-<td>Contains data about the prospect to which this visitor is assigned.  The prospect's data is returned in <code>mobile</code> output format.  See <a href="using-prospects#xml-response-formats">XML Response Formats</a> in <a href="using-prospects">Using Prospects</a>.</td>
+<td>Contains data about the prospect to which this visitor is assigned.  The prospect's data is returned in <code>mobile</code> output format.  See <a href="../prospects/#xml-response-formats">XML Response Formats</a> in <a href="../prospects/#using-prospects">Using Prospects</a>.</td>
 </tr>
 <tr>
 <td><code>&lt;identified_company&gt;</code></td>
