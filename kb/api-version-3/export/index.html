@@ -578,7 +578,6 @@
         <li class="main "><a href="#csv-file-formatting">CSV File Formatting</a></li>
         <li class="main "><a href="#procedures">Procedures</a></li>
             <li><a href="#visitor-activity">Visitor Activity</a></li>
-            <li><a href="#filter_by_created_at">filter_by_created_at</a></li>
         <li class="main "><a href="#using-the-export-api">Using the Export API</a></li>
         <li class="main "><a href="#create">Create</a></li>
             <li><a href="#post">POST</a></li>
@@ -624,9 +623,11 @@
 <h1 id="procedures">Procedures</h1>
 <p>A procedure is a query and execution plan used to retrieve the data. Each object has a different set of procedures.</p>
 <h2 id="visitor-activity">Visitor Activity</h2>
-<h2 id="filter_by_created_at">filter_by_created_at</h2>
+<h3 id="fields">Fields</h3>
+<p>Select the visitor activity fields that need to be exported. <a href="../../object-field-references/#visitor-activity">Following</a> are the fields that are available for visitor activity. The value for <code>fields</code> must be an array of strings of the available fields. </p>
+<h3 id="filter_by_created_at">filter_by_created_at</h3>
 <p>Retrieves all visitor activity records with a <code>created_at</code> value that is equal or greater than the <code>created_after</code> argument and less than or equal to the <code>created_before</code> argument.</p>
-<h3 id="abilities">Abilities</h3>
+<h4 id="abilities">Abilities</h4>
 <table>
 <thead>
 <tr>
@@ -666,7 +667,7 @@
 <ul>
 <li>“Admin &gt; Exports &gt; View”</li>
 </ul>
-<h3 id="arguments">Arguments</h3>
+<h4 id="arguments">Arguments</h4>
 <ul>
 <li><strong>created_after</strong>: Selects visitor activities that were created after the specified time. The value can be <code>today</code>, <code>yesterday</code>, <code>last_7_days</code>, <code>this_month</code>, <code>last_month</code>, or a custom time specified in <a href="http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html">GNU Date Input Syntax</a> format.</li>
 <li><strong>created_before</strong>: (Optional) Selects visitor activities that were created before the specified time. This value must be after the value in <code>created_after</code>. If this argument is not specified, then no upper boundary is used in the query, and all data after the <code>created_after</code> is returned. The value can be <code>today</code>, <code>yesterday</code>, <code>last_7_days</code>, <code>this_month</code>, <code>last_month</code>, or a custom time specified in <a href="http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html">GNU Date Input Syntax</a> format.</li>
@@ -685,6 +686,7 @@
 <p>Input Representation</p>
 <ul>
 <li><strong>object</strong>: Specifies which object to export. Currently only "visitorActivity" is supported.</li>
+<li><strong>fields</strong>: Specifies the fields that will be exported. If no <code>fields</code> value is given, all available fields will be exported.</li>
 <li><strong>procedure</strong>: The procedure to execute. A procedure is a query and execution plan used to retrieve data. Each object has a different set of procedures. See the <a href="#procedures">Procedures</a> section for available procedures.<ul>
 <li><strong>name</strong>: The name of the procedure.</li>
 <li><strong>arguments</strong>: Arguments used to manipulate the behavior of the procedure. These arguments are specific to the procedure. See the documentation for the procedure to see which arguments apply.</li>
@@ -693,6 +695,7 @@
 </ul>
 <pre><code class="json">{
     &quot;object&quot;: string,
+    &quot;fields&quot;: [string, string, ....],
     &quot;procedure&quot;: {
         &quot;name&quot;: string,
         &quot;arguments&quot;: {
@@ -741,6 +744,7 @@ Authorization: Pardot user_key=U,api_key=A
 
 <pre><code class="json">{
     &quot;object&quot;: &quot;visitorActivity&quot;,
+    &quot;fields&quot;: [&quot;id&quot;, &quot;prospect_id&quot;, &quot;visitor_id&quot;, &quot;type_name&quot;, &quot;created_at&quot;],
     &quot;procedure&quot;: {
         &quot;name&quot;: &quot;filter_by_created_at&quot;,
         &quot;arguments&quot;: {
