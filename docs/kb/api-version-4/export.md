@@ -18,6 +18,7 @@ The Export resource is used to create an export and get the status of an export.
 
 * The Export API is subject to the daily Pardot API call limit and the concurrent Pardot API call limit for your account.
 * Export API calls are executed sequentially for each account, with older exports being processed before newer exports.
+* Export API currently only supports exports of up to 12 months of data per call.
 
 # Expiration
 
